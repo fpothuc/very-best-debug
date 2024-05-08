@@ -29,6 +29,9 @@ class User < ApplicationRecord
     my_comments.each do |a_comment|
       array_of_venue_ids.push(a_comment.venue_id)
     end
+  end
+  
+  def distinct_venues
 
     matching_venues = Venue.where({ :id => array_of_venue_ids })
 

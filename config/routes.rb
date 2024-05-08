@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   #venue controller
     #venue reads
   get("/venues", { :controller => "venues", :action => "index" })
-  get("/venue/:venue_id", { :controller => "venues", :action => "show" })
+  get("/venues/:venue_id", { :controller => "venues", :action => "show" })
     #venue posts
   post("/insert_venue_record", { :controller => "venues", :action => "create" })
   post("/update_venue/:the_id", { :controller => "application", :action => "update" })
