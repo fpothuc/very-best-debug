@@ -29,6 +29,7 @@ class User < ApplicationRecord
     my_comments.each do |a_comment|
       array_of_venue_ids.push(a_comment.venue_id)
     end
+    return array_of_venue_ids
   end
   
   def distinct_venues
