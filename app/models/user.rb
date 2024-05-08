@@ -21,7 +21,6 @@ class User < ApplicationRecord
   end
 
   def commented_venues
-
     my_comments = self.comments
     
     array_of_venue_ids = Array.new
@@ -29,15 +28,22 @@ class User < ApplicationRecord
     my_comments.each do |a_comment|
       array_of_venue_ids.push(a_comment.venue_id)
     end
-    return array_of_venue_ids
-  end
-  
-  def distinct_venues
 
     matching_venues = Venue.where({ :id => array_of_venue_ids })
 
     unique_matching_venues = matching_venues.distinct
 
     return unique_matching_venues
+  
+    return matching_venues
   end
+  
+  # def distinct_venues
+  #   my_id = self.id
+  #   matching_venues = Venue.where({ :id => my_id })
+
+  #   unique_matching_venues = matching_venues.distinct
+
+  #   return unique_matching_venues
+  # end
 end
