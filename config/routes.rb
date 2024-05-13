@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     #user reads
   get("/users", { :controller => "users", :action => "index" })
   get("/users/:username", { :controller => "users", :action => "show" })
-    #user posts
   post("/insert_user_record", { :controller => "users", :action => "create" })
   post("/update_user/:user_id", { :controller => "users", :action => "update" })
 
